@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menubg">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/startbutton"
+            android:text="开始游戏"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="160dp"
+            android:background="#212121"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/recordbutton"
+            android:text="查看记录"
+            android:textColor="#212121"
+            android:textSize="25sp"
+            android:background="#ffffff"
+            android:layout_below="@+id/startbutton"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/aboutbutton"
+            android:text="关于游戏"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:background="#07689f"
+            android:layout_below="@+id/recordbutton"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="退出游戏"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:id="@+id/exitbutton"
+            android:background="#212121"
+            android:layout_below="@+id/aboutbutton"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+</LinearLayout>

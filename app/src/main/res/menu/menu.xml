@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <item
+        android:id="@+id/clear"
+        android:title="清除记录"/>
+    <item
+        android:id="@+id/sortbyscore"
+        android:title="按分数排序"/>
+    <item
+        android:id="@+id/sortbydate"
+        android:title="按记录时间排序"/>
+
+</menu>
