@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Skip_the_line.iml" filepath="$PROJECT_DIR$/Skip_the_line.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/skiptheline.iml" filepath="$PROJECT_DIR$/skiptheline.iml" />
     </modules>
   </component>
 </project>

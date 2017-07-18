@@ -80,7 +80,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         moveThread=new MoveThread(this);//初始化移动的线程,move线程管画面所有的物体的运动
         generateLineThread=new GenerateLineThread(this);//初始化产生直线的线程
         timeThread=new TimeThread(this);//初始化计时线程
-
+        countMemory("before add things in game:");
         textTypeface=activity.typeface;
         textPaint.setTypeface(textTypeface);
         textPaint.setARGB(255,255,255,255);
@@ -116,6 +116,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         //heighestrecord=getHeighestrecord();
 
         communinateWithFile=new CommuninateWithFile(Contsance.getInstance().recordFileName,activity);
+    countMemory("after add things to game:");
     }
 
     public void initSounds(){
@@ -177,7 +178,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             canvas.drawBitmap(pauseBGBitmap,0,0,paint);
         if (gameoverFlag){
             canvas.drawBitmap(gameoverBitmap,0,0,paint);
-            canvas.drawText("score:"+score+"  time:"+Ulity.getTime(timeCount),(int)(0.25*scrwidth),(int)(0.600*scrheigth),textPaintResult);
+            canvas.drawText("score:"+this.getScore()+"  time:"+Ulity.getTime(timeCount),(int)(0.25*scrwidth),(int)(0.600*scrheigth),textPaintResult);
         }
         if (systemsecondcurrent<systemsecondStart){
             systemsecondcurrent+=60;
@@ -198,27 +199,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         return score;
     }
 
-//    public int getHeighestrecord(){
-//        String readFileResult;
-//        String[] splitResult;
-//        String[] singleRecord;
-//        int max=0;
-//        int temp;
-//
-//        try {
-//            readFileResult=communinateWithFile.readDataFromFile(getContext());
-//            splitResult=readFileResult.split("/");
-//            for (String iterator :splitResult){
-//                    singleRecord=iterator.split(",");
-//                    temp=Integer.parseInt(singleRecord[0]);
-//                if (temp>max)
-//                    max=temp;
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return max;
-//    }
     public void setCharacterFlag(boolean characterFlag) {
         this.characterFlag = characterFlag;
     }
@@ -247,6 +227,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 
     public void addScore(int score) {
         this.score += score;
+    }
+
+    private void countMemory(String tag){
+        int freeMemory=(int)(Runtime.getRuntime().freeMemory()/1024);
+        Log.d("MemoryTest",tag+" free runtime memory:"+freeMemory+"k");
     }
 
     /**
